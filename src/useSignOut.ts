@@ -5,8 +5,8 @@ const useSignOut = () => {
   const c = useContext(AuthContext)
   return () => {
     try {
-      if (c?.authObject.authToken) {
-        c.setAuthToken((prevState) => ({
+      if (c?.authState.authToken) {
+        c.setAuthState((prevState) => ({
           ...prevState,
           authToken: null,
           expireAt: null

@@ -13,24 +13,22 @@ const PrivateRoute: React.FunctionComponent<Props> = ({
   loginPath,
   ...rest
 }) => {
-  const _authContext = useContext(AuthContext)
+  const context = useContext(AuthContext)
 
   const isAuth = () => {
-    if (
-      _authContext?.authObject.authToken &&
-      _authContext?.authObject.expireAt
-    ) {
-      if (_authContext.authObject.expireAt < new Date()) {
-        return { auth: true, authToken: _authContext.authObject.authToken }
+    if (context?.authState.authToken && context?.authState.expireAt) {
+      if (context.authState.expireAt < new Date()) {
+        return true
       } else {
-        _authContext.setAuthToken({
+        console.log('RAJ :: Token Expired')
+        context.setAuthState({
           authToken: null,
           expireAt: null
         })
-        return { auth: false, authToken: null }
+        return false
       }
     } else {
-      return { auth: false, authToken: null }
+      return false
     }
   }
 
@@ -38,11 +36,7 @@ const PrivateRoute: React.FunctionComponent<Props> = ({
     <Route
       {...rest}
       render={(props) =>
-        isAuth().auth ? (
-          <Component props={props} />
-        ) : (
-          <Redirect to={loginPath} />
-        )
+        isAuth() ? <Component props={props} /> : <Redirect to={loginPath} />
       }
     />
   )

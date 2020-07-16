@@ -7,7 +7,7 @@ const useSignIn = () => {
     const expTime = new Date(new Date().getTime() + expiresIn * 60 * 1000)
     try {
       if (c) {
-        c.setAuthToken((prevState) => ({
+        c.setAuthState((prevState) => ({
           ...prevState,
           authToken: token,
           expireAt: expTime

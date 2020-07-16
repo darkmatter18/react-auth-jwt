@@ -6,6 +6,6 @@ declare interface TokenInterface {
 }
 
 declare interface ContextProps {
-  authObject: TokenInterface | null
-  setAuthToken: React.Dispatch<React.SetStateAction<TokenInterface>>
+  authState: TokenInterface
+  setAuthState: React.Dispatch<React.SetStateAction<TokenInterface>>
 }
