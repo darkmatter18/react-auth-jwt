@@ -17,7 +17,7 @@ const PrivateRoute: React.FunctionComponent<Props> = ({
 
   const isAuth = () => {
     if (context?.authState.authToken && context?.authState.expireAt) {
-      if (context.authState.expireAt < new Date()) {
+      if (new Date(context.authState.expireAt) > new Date()) {
         return true
       } else {
         console.log('RAJ :: Token Expired')
