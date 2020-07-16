@@ -1,5 +1,5 @@
 import AuthProvider from './AuthProvider'
 import PrivateRoute from './PrivateRoute'
-import UseAuth from './useAuth'
+import useAuth from './useAuth'
 
-export { AuthProvider, PrivateRoute, UseAuth }
+export { AuthProvider, PrivateRoute, useAuth }

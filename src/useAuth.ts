@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AuthContext } from './AuthContext'
 
-class UseAuth {
+class useAuth {
   private readonly c: ContextProps | null
   constructor() {
     this.c = useContext(AuthContext)
@@ -35,4 +35,4 @@ class UseAuth {
   }
 }
 
-export default UseAuth
+export default useAuth
