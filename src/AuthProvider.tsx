@@ -6,10 +6,7 @@ type AuthProps = {
 }
 
 const AuthProvider: React.FunctionComponent<AuthProps> = ({ children }) => {
-  const [authObject, setAuthObject] = useState<TokenInterface>({
-    authToken: null,
-    expireAt: null
-  })
+  const [authObject, setAuthObject] = useState<TokenInterface | null>(null)
 
   return (
     <AuthContextProvider
