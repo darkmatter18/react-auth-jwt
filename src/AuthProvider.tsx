@@ -17,13 +17,16 @@ const AuthProvider: React.FunctionComponent<AuthProps> = ({
   )
 
   useEffect(() => {
+    console.log('Using Auth Effect')
     if (
       authObject.authToken === undefined ||
       authObject.authToken === null ||
       authObject.expireAt === null
     ) {
+      console.log('Using Auth Effect removing Token')
       JwtTokenObject.removeToken()
     } else {
+      console.log('Using Auth Effect Adding Token')
       JwtTokenObject.setToken(authObject.authToken, authObject.expireAt)
     }
   }, [authObject])
