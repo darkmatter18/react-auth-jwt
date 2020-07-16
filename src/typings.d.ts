@@ -1,17 +1,11 @@
-/**
- * Default CSS definition for typescript,
- * will be overridden with file-specific definitions by rollup
- */
-declare module '*.css' {
-  const content: { [className: string]: string };
-  export default content;
+type authTokenType = string | undefined | null
+
+declare interface TokenInterface {
+  authToken: authTokenType
+  expireAt: Date | null
 }
 
-interface SvgrComponent extends React.StatelessComponent<React.SVGAttributes<SVGElement>> {}
-
-declare module '*.svg' {
-  const svgUrl: string;
-  const svgComponent: SvgrComponent;
-  export default svgUrl;
-  export { svgComponent as ReactComponent }
+declare interface ContextProps {
+  authObject: TokenInterface
+  setAuthToken: React.Dispatch<React.SetStateAction<TokenInterface>>
 }
