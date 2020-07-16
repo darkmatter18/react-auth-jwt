@@ -6,18 +6,15 @@ import { AuthContext } from './AuthContext'
  */
 const useSignIn = () => {
   const c = useContext(AuthContext)
-  return (token: string, expiresIn: number): boolean => {
-    const expTime = new Date(new Date().getTime() + expiresIn * 60 * 1000)
-    try {
+  return (token: string, expiresIn: number) =>
+    new Promise((resolve) => {
+      const expTime = new Date(new Date().getTime() + expiresIn * 60 * 1000)
       if (c) {
         c.setAuthToken({ authToken: token, expireAt: expTime })
-        return true
+        resolve(true)
       } else {
-        return false
+        throw new Error('Could not able to Sign Out')
       }
-    } catch (e) {
-      return false
-    }
-  }
+    })
 }
 export default useSignIn

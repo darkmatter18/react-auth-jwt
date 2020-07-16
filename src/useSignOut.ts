@@ -3,18 +3,15 @@ import { AuthContext } from './AuthContext'
 
 const useSignOut = () => {
   const c = useContext(AuthContext)
-  return (): boolean => {
-    try {
+  return () =>
+    new Promise((resolve) => {
       if (c?.authObject.authToken) {
         c.setAuthToken({ authToken: null, expireAt: null })
-        return true
+        resolve(true)
       } else {
-        return false
+        throw new Error('Could not able to Sign Out')
       }
-    } catch (e) {
-      return false
-    }
-  }
+    })
 }
 
 export default useSignOut
