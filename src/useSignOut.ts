@@ -6,7 +6,11 @@ const useSignOut = () => {
   return () => {
     try {
       if (c?.authObject.authToken) {
-        c.setAuthToken({ authToken: null, expireAt: null })
+        c.setAuthToken((prevState) => ({
+          ...prevState,
+          authToken: null,
+          expireAt: null
+        }))
         return true
       } else {
         return false

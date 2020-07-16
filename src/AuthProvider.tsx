@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AuthContextProvider } from './AuthContext'
 
 type AuthProps = {
-  children: any
+  children: React.ReactChildren
 }
 
 const AuthProvider: React.FunctionComponent<AuthProps> = ({ children }) => {
@@ -10,17 +10,6 @@ const AuthProvider: React.FunctionComponent<AuthProps> = ({ children }) => {
     authToken: null,
     expireAt: null
   })
-
-  // useEffect(() => {
-  //   console.log('Using Auth Effect')
-  //   if (authObject.authToken === null || authObject.expireAt === null) {
-  //     console.log('Using Auth Effect removing Token')
-  //     JwtTokenObject.removeToken()
-  //   } else {
-  //     console.log('Using Auth Effect Adding Token')
-  //     JwtTokenObject.setToken(authObject.authToken, authObject.expireAt)
-  //   }
-  // }, [authObject])
 
   return (
     <AuthContextProvider
