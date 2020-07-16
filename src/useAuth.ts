@@ -7,7 +7,7 @@ class UseAuth {
     this.c = useContext(AuthContext)
   }
 
-  public signIn = (token: string, expiresIn: number): boolean => {
+  signIn(token: string, expiresIn: number): boolean {
     const expTime = new Date(new Date().getTime() + expiresIn * 60 * 1000)
     try {
       if (this.c) {
@@ -21,7 +21,7 @@ class UseAuth {
     }
   }
 
-  public signOut = (): boolean => {
+  signOut(): boolean {
     try {
       if (this.c?.authObject.authToken) {
         this.c.setAuthToken({ authToken: null, expireAt: null })
