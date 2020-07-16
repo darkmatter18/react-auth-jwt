@@ -11,6 +11,7 @@ const useSignOut = () => {
           authToken: null,
           expireAt: null
         }))
+        console.log('RAJ :: Signing Out')
         return true
       } else {
         return false
