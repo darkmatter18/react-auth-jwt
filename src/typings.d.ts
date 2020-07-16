@@ -1,4 +1,4 @@
-type authTokenType = string | undefined | null
+type authTokenType = string | null
 
 declare interface TokenInterface {
   authToken: authTokenType
