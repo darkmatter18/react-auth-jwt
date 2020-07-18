@@ -29,12 +29,13 @@ class TokenObject {
         const _t = JSON.parse(localStorage[this.tokenName])
         const token = _t.value
         const expiresAt = _t.expiresAt
-        return { authToken: token, expireAt: expiresAt }
+        const authState = _t.authState
+        return { authToken: token, expireAt: expiresAt, authState: authState }
       } else {
-        return { authToken: null, expireAt: null }
+        return { authToken: null, expireAt: null, authState: null }
       }
     } else {
-      return { authToken: null, expireAt: null }
+      return { authToken: null, expireAt: null, authState: null }
     }
   }
 

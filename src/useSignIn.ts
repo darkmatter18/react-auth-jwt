@@ -3,14 +3,15 @@ import { AuthContext } from './AuthContext'
 
 const useSignIn = () => {
   const c = useContext(AuthContext)
-  return (token: string, expiresIn: number) => {
+  return (token: string, expiresIn: number, authState: object) => {
     const expTime = new Date(new Date().getTime() + expiresIn * 60 * 1000)
     try {
       if (c) {
         c.setAuthState((prevState) => ({
           ...prevState,
           authToken: token,
-          expireAt: expTime
+          expireAt: expTime,
+          authState: authState
         }))
         console.log('RAJ :: Signing In')
         return true

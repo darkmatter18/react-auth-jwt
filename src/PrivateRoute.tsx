@@ -23,7 +23,8 @@ const PrivateRoute: React.FunctionComponent<Props> = ({
         console.log('RAJ :: Token Expired')
         context.setAuthState({
           authToken: null,
-          expireAt: null
+          expireAt: null,
+          authState: null
         })
         return false
       }

@@ -9,7 +9,8 @@ const useSignOut = () => {
         c.setAuthState((prevState) => ({
           ...prevState,
           authToken: null,
-          expireAt: null
+          expireAt: null,
+          authState: null
         }))
         console.log('RAJ :: Signing Out')
         return true
