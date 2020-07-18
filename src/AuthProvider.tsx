@@ -21,13 +21,18 @@ const AuthProvider: React.FunctionComponent<AuthProps> = ({
     if (
       authState.authToken === undefined ||
       authState.authToken === null ||
-      authState.expireAt === null
+      authState.expireAt === null ||
+      authState.authState === null
     ) {
       console.log('RAJ :: Using Auth Effect removing Token')
       JwtTokenObject.removeToken()
     } else {
       console.log('RAJ :: Using Auth Effect Adding Token')
-      JwtTokenObject.setToken(authState.authToken, authState.expireAt)
+      JwtTokenObject.setToken(
+        authState.authToken,
+        authState.expireAt,
+        authState.authState
+      )
     }
   }, [authState])
 
