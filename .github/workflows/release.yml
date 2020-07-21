@@ -36,6 +36,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
+          scope: '@darkmatter'
       # Publish to GitHub Packages
       - run: npm publish
         env:
