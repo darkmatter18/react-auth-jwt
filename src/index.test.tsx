@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { PrivateRoute } from '.'
 
-describe('ExampleComponent', () => {
+describe('PrivateRoute', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(PrivateRoute).toBeTruthy()
   })
 })
