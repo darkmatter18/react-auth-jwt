@@ -8,6 +8,18 @@ type Props = {
   rest: any
 }
 
+/**
+ * Private Route for Components
+ *
+ * @remarks
+ * This Component is based on {@link react-route-dom.Route}.
+ * So you need to install react-route-dom before use it
+ *
+ * @param Component - Component to be rendered
+ * @param loginPath - Fallback path if authentication fails
+ * @param rest - Other props support by Route {@link react-route-dom.Route}
+ */
+
 const PrivateRoute: React.FunctionComponent<Props> = ({
   Component,
   loginPath,

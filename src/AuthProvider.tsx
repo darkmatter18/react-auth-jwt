@@ -7,6 +7,14 @@ type AuthProps = {
   children: React.ReactChildren
 }
 
+/**
+ * AuthProvider Functional Component
+ *
+ * @param children - Children Component
+ * @param cookieName - Cookie Name for Auth Storing
+ *
+ * @return - AuthContext Provider
+ */
 const AuthProvider: React.FunctionComponent<AuthProps> = ({
   children,
   cookieName
