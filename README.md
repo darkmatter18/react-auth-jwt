@@ -2,7 +2,9 @@
 
 > Authenticate users in React app with JWT based authentication
 
-[![NPM](https://img.shields.io/npm/v/react-auth-jwt.svg)](https://www.npmjs.com/package/react-auth-jwt) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![Create Release](https://github.com/darkmatter18/react-auth-jwt/workflows/Create%20Release/badge.svg)
+[![NPM](https://img.shields.io/npm/v/react-auth-jwt.svg)](https://www.npmjs.com/package/react-auth-jwt)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 React [Context](https://reactjs.org/docs/context.html) and [Hooks](https://reactjs.org/docs/hooks-intro.html)
 based `Authentication` Package for [React](https://reactjs.org/) Apps
