@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AuthContext } from './AuthContext'
 
-const useAuthHeader = () => {
+const useAuthHeader: () => () => string = () => {
   const c = useContext(AuthContext)
   return () => {
     if (c?.authState) {

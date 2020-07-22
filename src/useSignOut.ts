@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { AuthContext } from './AuthContext'
 
-const useSignOut = () => {
+const useSignOut: () => () => boolean = () => {
   const c = useContext(AuthContext)
   return () => {
     try {

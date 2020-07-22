@@ -6,19 +6,12 @@ import { AuthContext } from './AuthContext'
  *
  * @returns - Auth State Function
  */
-const useAuth = () => {
+const useAuth: () => () => TokenInterface = () => {
   const c = useContext(AuthContext)
 
-  /**
-   * Get Auth State
-   *
-   * @returns - authstate
-   */
-  const auth = (): TokenInterface => {
+  return (): TokenInterface => {
     return <TokenInterface>c?.authState
   }
-
-  return auth
 }
 
 export default useAuth

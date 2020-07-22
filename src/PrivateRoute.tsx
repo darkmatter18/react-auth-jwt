@@ -19,7 +19,6 @@ type Props = {
  * @param loginPath - Fallback path if authentication fails
  * @param rest - Other props support by Route {@link react-route-dom.Route}
  */
-
 const PrivateRoute: React.FunctionComponent<Props> = ({
   Component,
   loginPath,

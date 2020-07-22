@@ -19,7 +19,7 @@ class TokenObject {
 
   setToken(value: string, expiresAt: Date, authState: object) {
     // {value: xxx, expiresAt: ttt}
-    const json = { value: value, expiresAt: expiresAt, authState: authState}
+    const json = { value: value, expiresAt: expiresAt, authState: authState }
     localStorage[this.tokenName] = JSON.stringify(json)
   }
 
