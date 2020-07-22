@@ -1,6 +1,6 @@
 {
   "name": "react-auth-jwt",
-  "version": "1.5.11",
+  "version": "1.5.12",
   "description": "Authenticate users in React app with JWT based authentication",
   "author": "darkmatter18",
   "license": "Apache-2.0",
