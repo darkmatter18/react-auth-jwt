@@ -21,27 +21,11 @@ const AuthProvider: React.FunctionComponent<AuthProps> = ({
 }) => {
   const JwtTokenObject = new TokenObject(cookieName)
   const [authState, setAuthState] = useState<TokenInterface>(
-    JwtTokenObject.getToken()
+    JwtTokenObject.initialToken()
   )
 
   useEffect(() => {
-    console.log('RAJ :: Using Auth Effect')
-    if (
-      authState.authToken === undefined ||
-      authState.authToken === null ||
-      authState.expireAt === null ||
-      authState.authState === null
-    ) {
-      console.log('RAJ :: Using Auth Effect removing Token')
-      JwtTokenObject.removeToken()
-    } else {
-      console.log('RAJ :: Using Auth Effect Adding Token')
-      JwtTokenObject.setToken(
-        authState.authToken,
-        authState.expireAt,
-        authState.authState
-      )
-    }
+    JwtTokenObject.syncTokens(authState)
   }, [authState])
 
   return (

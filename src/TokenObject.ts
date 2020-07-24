@@ -23,7 +23,11 @@ class TokenObject {
     localStorage[this.tokenName] = JSON.stringify(json)
   }
 
-  getToken(): TokenInterface {
+  removeToken() {
+    localStorage.removeItem(this.tokenName)
+  }
+
+  initialToken(): TokenInterface {
     if (this.isTokenExist()) {
       if (!this.isTokenExpire()) {
         const _t = JSON.parse(localStorage[this.tokenName])
@@ -39,8 +43,21 @@ class TokenObject {
     }
   }
 
-  removeToken() {
-    localStorage.removeItem(this.tokenName)
+  syncTokens(authState: TokenInterface) {
+    if (
+      authState.authToken === undefined ||
+      authState.authToken === null ||
+      authState.expireAt === null ||
+      authState.authState === null
+    ) {
+      this.removeToken()
+    } else {
+      this.setToken(
+        authState.authToken,
+        authState.expireAt,
+        authState.authState
+      )
+    }
   }
 }
 
