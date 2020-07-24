@@ -1,6 +1,6 @@
 {
   "name": "react-auth-jwt",
-  "version": "1.5.12",
+  "version": "1.6.0-0",
   "description": "Authenticate users in React app with JWT based authentication",
   "author": "darkmatter18",
   "license": "Apache-2.0",
@@ -25,16 +25,19 @@
   },
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "js-cookie": "^2.2.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.1",
     "@testing-library/react": "^10.4.7",
     "@testing-library/user-event": "^7.2.1",
+    "@types/js-cookie": "^2.2.6",
     "@types/jest": "^26.0.5",
     "@types/node": "^14.0.24",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
+    "@types/react-router-dom": "^5.1.5",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -50,6 +53,7 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-standard": "^4.0.1",
     "gh-pages": "^3.1.0",
+    "js-cookie": "^2.2.1",
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
@@ -64,6 +68,8 @@
     "dist"
   ],
   "dependencies": {
-    "@types/react-router-dom": "^5.1.5"
+    "react": "^16.0.0",
+    "react-router-dom": "^5.2.0",
+    "js-cookie": "^2.2.1"
   }
 }
