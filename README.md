@@ -28,7 +28,11 @@ import {AuthProvider} from "react-auth-jwt"
 
 ...
 
-<AuthProvider cookieName={"userAuth"}>
+<AuthProvider authCookieName={"cookie"}
+              authTimeCookieName={"timecookie"}
+              stateCookieName={"statecookie"}
+              cookieDomain={window.location.hostname}
+              cookieSecure={window.location.protocol === "https:"}>
     <RouteComponent />
 </AuthProvider>
 ```
