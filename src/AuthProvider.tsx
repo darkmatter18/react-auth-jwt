@@ -3,7 +3,11 @@ import { AuthContextProvider } from './AuthContext'
 import TokenObject from './TokenObject'
 
 type AuthProps = {
-  cookieName: string
+  authCookieName: string
+  authTimeCookieName: string
+  stateCookieName: string
+  cookieDomain: string
+  cookieSecure: boolean
   children: React.ReactChildren
 }
 
@@ -11,15 +15,28 @@ type AuthProps = {
  * AuthProvider Functional Component
  *
  * @param children - Children Component
- * @param cookieName - Cookie Name for Auth Storing
- *
- * @return - AuthContext Provider
+ * @param authCookieName - Cookie Name for Auth Storing
+ * @param authTimeCookieName - Cookie name for Auth Time Storing
+ * @param stateCookieName - Cookie name for Auth User Data Storing
+ * @param cookieDomain - Domain Name for the Cookies
+ * @param cookieSecure - HTTP / HTTPS
+ * @constructor
  */
 const AuthProvider: React.FunctionComponent<AuthProps> = ({
   children,
-  cookieName
+  authCookieName,
+  authTimeCookieName,
+  stateCookieName,
+  cookieDomain,
+  cookieSecure
 }) => {
-  const JwtTokenObject = new TokenObject(cookieName)
+  const JwtTokenObject = new TokenObject(
+    authCookieName,
+    authTimeCookieName,
+    stateCookieName,
+    cookieDomain,
+    cookieSecure
+  )
   const [authState, setAuthState] = useState<TokenInterface>(
     JwtTokenObject.initialToken()
   )
