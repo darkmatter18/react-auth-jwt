@@ -50,14 +50,10 @@ class TokenObject {
     const authTimeCookie = Cookies.get(this.authTimeCookieName)
     const stateCookie = Cookies.get(this.stateCookieName)
 
-    if (
-      authCookie !== undefined &&
-      authTimeCookie !== undefined &&
-      stateCookie !== undefined
-    ) {
+    if (authCookie !== undefined && authTimeCookie !== undefined) {
       const token = authCookie
       const expiresAt = new Date(authTimeCookie)
-      const authState = JSON.parse(stateCookie)
+      const authState = stateCookie ? JSON.parse(stateCookie) : ''
       return { authToken: token, expireAt: expiresAt, authState: authState }
     } else {
       return { authToken: null, expireAt: null, authState: null }
