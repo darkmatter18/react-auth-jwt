@@ -1,8 +1,12 @@
 import React from 'react'
 import { AuthContextConsumer } from './AuthContext'
 
+interface withSignInProps {
+  signIn(token: string, expiresIn: number, authState: object): boolean
+}
+
 const withSignIn = <P extends object>(Component: React.ComponentType<P>) => {
-  return class withSignIn extends React.Component<P> {
+  return class withSignIn extends React.Component<P & withSignInProps> {
     render() {
       const { ...props } = this.props
       return (
