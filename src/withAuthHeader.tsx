@@ -1,10 +1,14 @@
 import React from 'react'
 import { AuthContextConsumer } from './AuthContext'
 
+interface withAuthHeaderProps {
+  authHeader: string
+}
+
 const withAuthHeader = <P extends object>(
   Component: React.ComponentType<P>
 ) => {
-  return class withAuthHeader extends React.Component<P> {
+  return class withAuthHeader extends React.Component<P & withAuthHeaderProps> {
     render() {
       const { ...props } = this.props
       return (
