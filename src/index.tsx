@@ -4,6 +4,10 @@ import useSignIn from './useSignIn'
 import useSignOut from './useSignOut'
 import useAuth from './useAuth'
 import useAuthHeader from './useAuthHeader'
+import withAuth from './withAuth'
+import withAuthHeader from './withAuthHeader'
+import withSignIn from './withSignIn'
+import withSignOut from './withSignOut'
 
 export {
   AuthProvider,
@@ -11,5 +15,9 @@ export {
   useSignIn,
   useSignOut,
   useAuth,
-  useAuthHeader
+  useAuthHeader,
+  withAuth,
+  withAuthHeader,
+  withSignIn,
+  withSignOut
 }
