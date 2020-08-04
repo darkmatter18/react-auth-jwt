@@ -1,0 +1,8 @@
+site_name: React Auth JWT
+site_description: Authenticate users in React app with JWT based authentication
+
+theme:
+  name: 'material'
+
+nav:
+  - Introduction: 'index.md'
