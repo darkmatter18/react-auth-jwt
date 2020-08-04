@@ -8,11 +8,10 @@ interface withAuthProps {
 const withAuth = <P extends object>(Component: React.ComponentType<P>) => {
   return class withAuth extends React.Component<P & withAuthProps> {
     render() {
-      const { ...props } = this.props
       return (
         <AuthContextConsumer>
           {(value) => (
-            <Component {...(props as P)} authState={value?.authState} />
+            <Component {...(this.props as P)} authState={value?.authState} />
           )}
         </AuthContextConsumer>
       )
