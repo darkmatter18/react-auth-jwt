@@ -1,8 +1,12 @@
 import React from 'react'
 import { AuthContextConsumer } from './AuthContext'
 
+interface withSignOutProps {
+  signOut(): boolean
+}
+
 const withSignOut = <P extends object>(Component: React.ComponentType<P>) => {
-  return class withSignOut extends React.Component<P> {
+  return class withSignOut extends React.Component<P & withSignOutProps> {
     render() {
       const { ...props } = this.props
       return (
