@@ -7,6 +7,7 @@
   "repository": "darkmatter18/react-auth-jwt",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
+  "types": "dist/index.d.ts",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
@@ -23,6 +24,13 @@
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
+  "keywords": [
+    "react",
+    "auth",
+    "authentication",
+    "jwt",
+    "jsonwebtoken"
+  ],
   "peerDependencies": {
     "react": "^16.0.0",
     "react-router-dom": "^5.2.0",
