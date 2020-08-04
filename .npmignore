@@ -1,0 +1,10 @@
+src
+tsconfig.json
+tsconfig.test.json
+LICENSE
+.prettierrc
+.eslintrc
+.eslintignore
+.editorconfig
+.idea
+.github
