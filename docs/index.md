@@ -27,7 +27,8 @@ authentication very easy
 
 It is production-ready, and gives you the following:
 
-* Secure Authentication
+* Secure Client Side Authentication
+* Build for React
 * Easy to Implementation
 * Highly typed and written in TypeScript
 * Can be implemented using both [Higher Order Components](https://reactjs.org/docs/higher-order-components.html)

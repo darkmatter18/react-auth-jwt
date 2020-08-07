@@ -33,6 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Release
         id: release
         uses: actions/create-release@v1
@@ -43,12 +44,22 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - run: pip install mkdocs-material
+
+      - run: mkdocs gh-deploy --force
+
       - uses: actions/setup-node@v1
         with:
           node-version: '10.x'
           registry-url: 'https://registry.npmjs.org'
+
       - run: npm install
-      # Publish to npm
+
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
