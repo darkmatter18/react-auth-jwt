@@ -3,6 +3,14 @@ site_description: Authenticate users in React app with JWT based authentication
 
 theme:
   name: 'material'
+  icon:
+    repo: fontawesome/brands/github
+  logo: img/logo.svg
+  favicon: img/favicon.png
+
+repo_url: https://github.com/darkmatter18/react-auth-jwt
+repo_name: darkmatter18/react-auth-jwt
 
 nav:
   - Introduction: 'index.md'
+  - Usage: 'usage.md'
