@@ -5,8 +5,3 @@ declare interface TokenInterface {
   expireAt: Date | null
   authState: object | null
 }
-
-declare interface ContextProps {
-  authState: TokenInterface
-  setAuthState: React.Dispatch<React.SetStateAction<TokenInterface>>
-}
