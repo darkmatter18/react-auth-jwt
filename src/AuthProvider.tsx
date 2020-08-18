@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { AuthContextProvider } from './AuthContext'
 import TokenObject from './TokenObject'
 
-type AuthProps = {
+type authTokenType = string | null
+
+declare interface TokenInterface {
+  authToken: authTokenType
+  expireAt: Date | null
+  authState: object | null
+}
+
+interface AuthProps {
   authCookieName: string
   authTimeCookieName: string
   stateCookieName: string
