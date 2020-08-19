@@ -45,8 +45,28 @@ It is production-ready, and gives you the following:
 
 ## Installation
 
+### Using Package Manager
+
+#### Using NPM
 ```bash
 npm install --save react-auth-jwt
+```
+
+#### Using Yarn
+```bash
+yarn add react-auth-jwt
+```
+
+### Using CDN
+
+#### Unpkg
+```bash
+https://unpkg.com/react-auth-jwt@2.0.2/dist/index.js
+```
+
+#### JsDelivr
+```bash
+https://cdn.jsdelivr.net/npm/react-auth-jwt@2.0.2/dist/index.min.js
 ```
 
 <p align="center">&mdash; 🔑  &mdash;</p>
