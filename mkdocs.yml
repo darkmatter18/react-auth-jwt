@@ -14,3 +14,4 @@ repo_name: darkmatter18/react-auth-jwt
 nav:
   - Introduction: 'index.md'
   - Usage: 'usage.md'
+  - Sign In: 'signin.md'
