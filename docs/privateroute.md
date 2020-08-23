@@ -1,5 +1,7 @@
 # Private Route
 
+> Implement Private Route on your React App
+
 React Auth JWT has a `PrivateRoute` functionality Based on [React Router](https://reactrouter.com/)
 
 ## Import

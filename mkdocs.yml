@@ -15,4 +15,5 @@ nav:
   - Introduction: 'index.md'
   - Usage: 'usage.md'
   - Sign In: 'signin.md'
-  - Private Route: 'privateRoute.md'
+  - Private Route: 'privateroute.md'
+  - Sign Out: 'signout.md'
