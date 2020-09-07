@@ -1,3 +1,5 @@
+> This Package is depricated. Use [react-auth-kit](https://github.com/react-auth-kit/react-auth-kit) for more optimized and enhanced experience
+
 # react-auth-jwt
 
 > Authenticate users in React app with JWT based authentication
